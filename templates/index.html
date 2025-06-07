@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Calculator</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+    body {
+	    background: linear-gradient(-45deg, #667eea, #764ba2, #23a6d5, #23d5ab);
+	    background-size: 400% 400%;
+	    animation: gradient 15s ease infinite;
+	    min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 50px 20px;
+    }
+
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    
+    #window {
+        text-align: center;
+        padding: 50px 20px;
+    }
+    
+    .main-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 40px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .Title {
+        color: #4a5568;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+    }
+    
+    #explanation {
+        color: #718096;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    
+    .form-section h2 {
+        color: #2d3748;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+    
+    .form-control {
+        border-radius: 12px;
+        border: 2px solid #e2e8f0;
+        padding: 12px 16px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+    
+    .form-label {
+        font-weight: 600;
+        color: #4a5568;
+        margin-bottom: 10px;
+    }
+    
+    .btn-submit {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 12px 40px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: white;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+    
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        color: white;
+    }
+    
+    .ip-icon {
+        font-size: 4rem;
+        color: #667eea;
+        margin-bottom: 20px;
+    }
+</style>
+
+</head>
+<body>
+    <div id="window">
+        <div class="main-card">
+            <i class="fas fa-network-wired ip-icon"></i>
+            <h1 class="Title">IP Calculator</h1>
+            <p id="explanation">This Website will display the netmask and the class of a certain IP.</p>
+            <br>
+            <div class="form-section">
+                <h2>Provide an IP</h2>
+                <form action="/calc" method="post">
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">Enter a Valid IP:</label><br>
+                        <input type="text" class="form-control" id="fname" name="net" placeholder="e.g. 192.168.1.1"><br>
+                    </div>
+                    <button type="submit" class="btn btn-submit">submit</button><br><br>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

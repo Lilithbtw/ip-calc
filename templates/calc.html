@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Result</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+    body {
+	    background: linear-gradient(-45deg, #667eea, #764ba2, #23a6d5, #23d5ab);
+	    background-size: 400% 400%;
+	    animation: gradient 15s ease infinite;
+	    min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 50px 20px;
+    }
+
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+    
+    .result-container {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .result-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .ip-display {
+        color: #2d3748;
+        font-weight: 600;
+        margin-bottom: 30px;
+        font-size: 1.8rem;
+    }
+    
+    .result-display {
+        color: #4a5568;
+        font-size: 1.3rem;
+        font-weight: 500;
+        line-height: 1.6;
+        padding: 20px;
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        border-radius: 12px;
+        border-left: 5px solid #667eea;
+    }
+    
+    .success-icon {
+        font-size: 3rem;
+        color: #48bb78;
+        margin-bottom: 20px;
+    }
+    
+    .error-icon {
+        font-size: 3rem;
+        color: #f56565;
+        margin-bottom: 20px;
+    }
+    
+    .back-btn {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        padding: 12px 30px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+    
+    .back-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        color: white;
+        text-decoration: none;
+    }
+</style>
+</head>
+<body>
+    <div class="result-container">
+        <div class="result-card">
+            {% if result == "Your value isn't a valid IP." %}
+            <i class="fas fa-times-circle error-icon"></i>
+            {% else %}
+            <i class="fas fa-check-circle success-icon"></i>
+            {% endif %}
+            <h1 class="ip-display">Your IP is: {{ net }}</h1>
+            <div class="result-display">
+                <h2>{{ result }}</h2>
+            </div>
+            <a href="/" class="back-btn">
+                <i class="fas fa-arrow-left me-2"></i>Calculate Another IP
+            </a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
