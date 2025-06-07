@@ -41,6 +41,9 @@ pip install -r requirements.txt
 python ipv4-check.py
 ```
 
+Then visit http://localhost:5000 in your browser.
+
+
 ## Installation (Docker)
 
 1. **Build the image**
@@ -51,5 +54,7 @@ docker build -t flask-ipv4-check .
 2. **Run the container**
 
 ```bash
-docker run -p 5000:5000 flask-ipv4-check
+docker run -p 80:5000 flask-ipv4-check
 ```
+
+Then visit http://localhost in your browser.
