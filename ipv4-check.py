@@ -45,4 +45,4 @@ def main(ip):
         return "Your value isn't a valid IP."
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", port, debug=True)
+    app.run("0.0.0.0", port)
