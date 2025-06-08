@@ -25,8 +25,7 @@ def main(ip):
         for n in ip:
             if n == ".":
                 break
-            else:
-                frst_ip += n 
+            frst_ip += n 
 
         final_ip = '{0:08b}'.format(int(frst_ip))[:4]
         match final_ip:
