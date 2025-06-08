@@ -44,17 +44,25 @@ python ipv4-check.py
 Then visit http://localhost:5000 in your browser.
 
 
-## Installation (Docker)
+## Building (Docker)
 
 1. **Build the image**
 ```bash
-docker build -t flask-ipv4-check .
+docker build -t ip-calc .
 ```
 
 2. **Run the container**
 
 ```bash
-docker run -p 80:5000 flask-ipv4-check
+docker run -p 80:5000 ip-calc
 ```
 
 Then visit http://localhost in your browser.
+
+## Installation (Docker)
+
+```bash
+docker run -p 5000:5000 lilithbtw/ip-calc
+```
+
+Then visit http://localhost:5000 in your browser
