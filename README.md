@@ -18,7 +18,7 @@ A simple Python Flask web application that provides IPv4-related utilities via a
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/flask-ipv4-check.git
+git clone https://github.com/lilithbtw/flask-ipv4-check.git
 cd flask-ipv4-check
 ```
 
